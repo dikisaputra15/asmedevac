@@ -33,9 +33,9 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <label for="city">Country</label>
+                <label for="city">County</label>
                 <select name="city" id="city" class="form-control">
-                    <option value="">-Choosse Country-</option>
+                    <option value="">-Choosse County-</option>
                 </select>
             </div>
         </div>
@@ -176,7 +176,7 @@
                 type: 'GET',
                 success: function (data) {
                     $('#city').empty();
-                    $('#city').append('<option value="">-- Choosse District --</option>');
+                    $('#city').append('<option value="">-- Choosse County --</option>');
                     $.each(data, function (key, city) {
                         $('#city').append('<option value="' + city.id + '">' + city.district + '</option>');
                     });
@@ -184,7 +184,7 @@
             });
         } else {
             $('#city').empty();
-            $('#city').append('<option value="">-- Choosse District --</option>');
+            $('#city').append('<option value="">-- Choosse County --</option>');
         }
     });
 
