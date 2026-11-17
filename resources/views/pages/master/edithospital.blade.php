@@ -110,11 +110,8 @@
             <div class="form-group">
                 <label>Edit Facility Level</label>
                 <select class="form-control" name="facility_level">
-                    <option value="National Hospitals" {{ old('facility_level', $hospital->facility_level ?? '') == 'National Hospitals' ? 'selected' : '' }}>
-                        National Hospitals
-                    </option>
-                    <option value="District Hospitals" {{ old('facility_level', $hospital->facility_level ?? '') == 'District Hospitals' ? 'selected' : '' }}>
-                        District Hospitals
+                    <option value="Hospitals" {{ old('facility_level', $hospital->facility_level ?? '') == 'Hospitals' ? 'selected' : '' }}>
+                        Hospitals
                     </option>
                     <option value="Clinic / Health Centre" {{ old('facility_level', $hospital->facility_level ?? '') == 'Clinic / Health Centre' ? 'selected' : '' }}>
                         Clinic / Health Centre
@@ -154,8 +151,7 @@
 
                 @php
                     $icons = [
-                        ['url' => 'https://id.concordreview.com/wp-content/plugins/w2gm/resources/images/map_icons/icons/_new/hospital-pin-red.png', 'label' => 'National Hospitals'],
-                        ['url' => 'https://id.concordreview.com/wp-content/plugins/w2gm/resources/images/map_icons/icons/_new/hospital_pin-blue.png', 'label' => 'District Hospitals'],
+                        ['url' => 'https://id.concordreview.com/wp-content/plugins/w2gm/resources/images/map_icons/icons/_new/hospital-pin-red.png', 'label' => 'Hospitals'],
                         ['url' => 'https://id.concordreview.com/wp-content/plugins/w2gm/resources/images/map_icons/icons/_new/hospital_pin-green.png', 'label' => 'Clinic / Health Centre'],
                     ];
                 @endphp
