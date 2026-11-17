@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title','More Details')
-@section('page-title', 'Tonga Airports')
+@section('page-title', 'American Samoa Airports')
 
 @push('styles')
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -198,7 +198,7 @@
                         {{ $airport->address ?? '-'  }},
                         {{ $city->city ?? '-' }},
                         {{ $district->district ?? '-' }},
-                        {{ $province->provinces_region ?? '-' }}, Tonga
+                        {{ $province->provinces_region ?? '-' }}, American Samoa
                     </p>
                     <p><strong>Latitude:</strong> {{ $airport->latitude }} </p>
                     <p><strong>Longitude:</strong> {{ $airport->longitude }} </p>

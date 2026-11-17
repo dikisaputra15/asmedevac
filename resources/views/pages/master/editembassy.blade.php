@@ -22,7 +22,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Edit Island division</label>
+                <label>Edit County</label>
                 <select class="form-control" name="province_id" id="province">
                     <?php
                         foreach ($provinces as $prov) {
@@ -44,7 +44,7 @@
 
        <div class="col-md-12">
             <div class="form-group">
-                <label>Edit District</label>
+                <label>Edit County</label>
                 <select class="form-control" name="city" id="city">
                     <?php
                         foreach ($districts as $district) {
@@ -66,7 +66,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Edit Town / village</label>
+                <label>Edit Village</label>
                 <select class="form-control" name="district_id" id="district">
                     <?php
                         foreach ($cities as $city) {
@@ -238,14 +238,14 @@
                 url: '/get-districts/' + cityID,
                 type: 'GET',
                 success: function (data) {
-                    $('#district').empty().append('<option value="">-Choose Town / village-</option>');
+                    $('#district').empty().append('<option value="">-Choose Village-</option>');
                     $.each(data, function (key, district) {
                         $('#district').append('<option value="'+ district.id +'">'+ district.city +'</option>');
                     });
                 }
             });
         } else {
-            $('#district').html('<option value="">-Choose Town / village-</option>');
+            $('#district').html('<option value="">-Choose Village-</option>');
         }
     });
 </script>

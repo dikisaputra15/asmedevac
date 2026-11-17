@@ -22,9 +22,9 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Island division</label>
+                <label>District</label>
                 <select class="form-control" name="province_id" id="province">
-                        <option value="0">-Choosse Island division-</option>
+                        <option value="0">-Choosse District-</option>
                     @foreach($provinces as $prov)
                         <option value="{{$prov->id}}">{{$prov->provinces_region}}</option>
                     @endforeach
@@ -34,18 +34,18 @@
 
         <div class="col-md-12">
             <div class="form-group">
-                <label for="city">District</label>
+                <label for="city">Country</label>
                 <select name="city" id="city" class="form-control">
-                    <option value="">-Choosse District-</option>
+                    <option value="">-Choosse Country-</option>
                 </select>
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="form-group">
-                <label>Town / village</label>
+                <label>Village</label>
                 <select name="district_id" id="district" class="form-control">
-                    <option value="">-Choose Town / village-</option>
+                    <option value="">-Choose Village-</option>
                 </select>
             </div>
         </div>
@@ -904,7 +904,7 @@
                 type: 'GET',
                 success: function (data) {
                     $('#city').empty();
-                    $('#city').append('<option value="">-- Choosse District --</option>');
+                    $('#city').append('<option value="">-- Choosse Country --</option>');
                     $.each(data, function (key, city) {
                         $('#city').append('<option value="' + city.id + '">' + city.district + '</option>');
                     });
@@ -912,7 +912,7 @@
             });
         } else {
             $('#city').empty();
-            $('#city').append('<option value="">-- Choosse District --</option>');
+            $('#city').append('<option value="">-- Choosse Country --</option>');
         }
     });
 
@@ -925,14 +925,14 @@
                 url: '/get-districts/' + cityID,
                 type: 'GET',
                 success: function (data) {
-                    $('#district').empty().append('<option value="">-Choose Town / village-</option>');
+                    $('#district').empty().append('<option value="">-Choose Village-</option>');
                     $.each(data, function (key, district) {
                         $('#district').append('<option value="'+ district.id +'">'+ district.city +'</option>');
                     });
                 }
             });
         } else {
-            $('#district').html('<option value="">-Choose Town / village-</option>');
+            $('#district').html('<option value="">-Choose Village-</option>');
         }
     });
 </script>

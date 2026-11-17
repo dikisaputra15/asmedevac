@@ -143,7 +143,7 @@
                         {{ $embassy->location ?? '-' }},
                         {{ $city->city ?? '-' }},
                         {{ $district->district ?? '-' }},
-                        {{ $province->provinces_region ?? '-' }}, Tonga
+                        {{ $province->provinces_region ?? '-' }}, American Samoa
                     </p>
                     <p>
                         <strong>Latitude:</strong> {{ $embassy->latitude }}

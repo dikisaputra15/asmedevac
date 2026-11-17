@@ -245,7 +245,7 @@ $(function () {
   //     },
   //     {
   //       latLng: [-21.13, -175.2],
-  //       name  : 'Tonga'
+  //       name  : 'American Samoa'
   //     },
   //     {
   //       latLng: [15.3, -61.38],

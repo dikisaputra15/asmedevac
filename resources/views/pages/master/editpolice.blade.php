@@ -22,7 +22,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Edit Island division</label>
+                <label>Edit County</label>
                 <select class="form-control" name="province_id" id="province">
                     <?php
                         foreach ($provinces as $prov) {
@@ -44,7 +44,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Edit District</label>
+                <label>Edit County</label>
                 <select class="form-control" name="city" id="city">
                     <?php
                         foreach ($districts as $district) {
@@ -66,7 +66,7 @@
 
          <div class="col-md-12">
             <div class="form-group">
-                <label>Edit Town / village</label>
+                <label>Edit Village</label>
                 <select class="form-control" name="district_id" id="district">
                     <?php
                         foreach ($cities as $city) {
@@ -153,15 +153,37 @@
                     <label>National Police (HQ)</label>
                 </div>
 
-                <div class="form-check form-check-inline police-option {{ $police->category == 'Local Police Post' ? 'selected' : '' }}">
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Police Sub Station' ? 'selected' : '' }}">
                     <input class="form-check-input category-radio"
                         type="radio"
                         name="category"
-                        value="Local Police Post"
+                        value="Police Sub Station"
                         data-icon="{{ asset('images/Layer2.png') }}"
-                        {{ $police->category == 'Local Police Post' ? 'checked' : '' }}>
+                        {{ $police->category == 'Police Sub Station' ? 'checked' : '' }}>
                     <img src="{{ asset('images/Layer2.png') }}" width="16">
-                    <label>Local Police Post</label>
+                    <label>Police Sub Station</label>
+                </div>
+
+                <div class="form-check form-check-inline police-option {{ $police->category == 'Police Post' ? 'selected' : '' }}">
+                    <input class="form-check-input category-radio"
+                        type="radio"
+                        name="category"
+                        value="Police Post"
+                        data-icon="{{ asset('images/Layer3.png') }}"
+                        {{ $police->category == 'Police Post' ? 'checked' : '' }}>
+                    <img src="{{ asset('images/Layer3.png') }}" width="16">
+                    <label>Police Post</label>
+                </div>
+
+                 <div class="form-check form-check-inline police-option {{ $police->category == 'Specialized Unit' ? 'selected' : '' }}">
+                    <input class="form-check-input category-radio"
+                        type="radio"
+                        name="category"
+                        value="Specialized Unit"
+                        data-icon="{{ asset('images/Layer4.png') }}"
+                        {{ $police->category == 'Specialized Unit' ? 'checked' : '' }}>
+                    <img src="{{ asset('images/Layer4.png') }}" width="16">
+                    <label>Specialized Unit</label>
                 </div>
 
             </div>
@@ -372,14 +394,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 url: '/get-districts/' + cityID,
                 type: 'GET',
                 success: function (data) {
-                    $('#district').empty().append('<option value="">-Choose Town / village-</option>');
+                    $('#district').empty().append('<option value="">-Choose Village-</option>');
                     $.each(data, function (key, district) {
                         $('#district').append('<option value="'+ district.id +'">'+ district.city +'</option>');
                     });
                 }
             });
         } else {
-            $('#district').html('<option value="">-Choose Town / village-</option>');
+            $('#district').html('<option value="">-Choose Village-</option>');
         }
     });
 </script>
