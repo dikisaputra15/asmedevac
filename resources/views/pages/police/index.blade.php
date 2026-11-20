@@ -310,33 +310,30 @@
         <div class="d-flex justify-content-between align-items-center gap-3 my-2">
 
             <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-link p-0 fw-bold text-decoration-underline text-dark" data-bs-toggle="modal" data-bs-target="#disclaimerModal">
-                    <i class="bi bi-info-circle text-primary fs-5"></i>
-                    <small>Disclaimer</small>
-                </button>
+
             </div>
 
             <div class="d-flex align-items-center gap-3">
                 <span class="fw-bold me-2"><small>Map Legend:</small></span>
 
-                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level6Modal">
+                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police1Modal">
                     <img src="{{ asset('images/Layer1.png') }}" style="width:12px; height:12px;">
                     <small>National Police (HQ)</small>
                 </button>
 
-                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level5Modal">
+                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police2Modal">
                     <img src="{{ asset('images/Layer2.png') }}" style="width:12px; height:12px;">
-                    <small>Province / Territory</small>
+                    <small>Police Sub Station</small>
                 </button>
 
-                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level4Modal">
+                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police3Modal">
                     <img src="{{ asset('images/Layer3.png') }}" style="width:12px; height:12px;">
-                    <small>Municipality / Locality</small>
+                    <small>Police Post</small>
                 </button>
 
-                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level3Modal">
+                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police4Modal">
                     <img src="{{ asset('images/Layer4.png') }}" style="width:12px; height:12px;">
-                    <small>Township Police Station</small>
+                    <small>Specialized Unit</small>
                 </button>
 
                 <button type="button" class="btn btn-danger d-flex flex-column align-items-center p-3 {{ request()->is('hospital') ? 'active' : '' }}"
@@ -374,180 +371,10 @@
   </div>
 </div>
 
-<div class="modal fade" id="level3Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer4.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">Township Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Third-tier territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Major or Police Captain and can also be commanded by a Police Lieutenant
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> Township level
-        </p>
-        <p class="p-modal text-justify">
-            Embodies the primary operational police command responsible for delivering day-to-day policing services in a township. Township police force directs routine law enforcement, criminal investigations, patrol operations, public safety activities, and the supervision of police stations and outposts within its jurisdiction.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Directs routine policing operations throughout the township.</li>
-            <li>Supervises police stations and police outposts.</li>
-            <li>Prevents and investigates criminal offences.</li>
-            <li>Maintains public order and responds to emergencies.</li>
-            <li>Conducts patrols and crime prevention initiatives.</li>
-            <li>Coordinates local intelligence gathering and security monitoring.</li>
-            <li>Cooperates with township administrative authorities and community organizations.</li>
-            <li>Submits operational and administrative reports to the District Police Force.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level4Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">District Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Second-tier territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Lieutenant Colonel or Police Major
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> District level
-        </p>
-        <p class="p-modal text-justify">
-            Represents the intermediate territorial command responsible for coordinating police operations among multiple township police forces within a district. District Police Forces are classified into two (2) classes depending on the area, population, and development:
-        </p>
-        <ul>
-            <li>Commanders of the A Class District Police Forces are Police Lieutenant Colonels.</li>
-            <li>Commanders of the B Class District Police Forces are Police Majors.</li>
-        </ul>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Commands all township police forces within the district.</li>
-            <li>Coordinates district-wide crime prevention and law enforcement operations.</li>
-            <li>Supervises investigations involving multiple townships or significant criminal cases.</li>
-            <li>Monitors public order and security conditions throughout the district.</li>
-            <li>Allocates personnel and operational resources among township commands.</li>
-            <li>Reviews operational performance and administrative compliance of subordinate units.</li>
-            <li>Coordinates with district administrative authorities and judicial institutions.</li>
-            <li>Reports district policing activities to the State or Regional Police Command.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level5Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">State Police Force / Region Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Top territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Brigadier General or Police Colonel
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> State or region (division) government level
-        </p>
-        <p class="p-modal text-justify">
-            Constitutes the highest territorial command of the MPF in a State or Region, implementing national policing policies while directing all law enforcement, public order, criminal investigation, and administrative activities throughout its jurisdiction. State and regional police force is the principal operational link between MPF Headquarters and subordinate Municipality / Localitys.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Exercises command over all police units within the State or Region.</li>
-            <li>Implements national policing policies and operational directives issued by MPF Headquarters.</li>
-            <li>Coordinates major law enforcement, public security, and crime prevention operations.</li>
-            <li>Supervises district police forces and evaluates their operational performance.</li>
-            <li>Directs responses to major emergencies, disasters, and public order incidents.</li>
-            <li>Coordinates policing activities with the State or Region Government and other public authorities.</li>
-            <li>Oversees personnel administration, logistics, budgeting, and resource allocation within the territorial command.</li>
-            <li>Reports operational, intelligence, and administrative matters to MPF Headquarters.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level6Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="{{ asset('images/Layer1.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">National Police (HQ)</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> National Police Commander
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Lieutenant General or Police Major General
-        </p>
-        <p class="p-modal text-justify">
-            <b>Role:</b> Highest commander of the MPF
-        </p>
-        <p class="p-modal text-justify">
-            Functions as the supreme professional and operational leader of the MPF, exercising overall command, control, and administration of the national police organization under the authority of the MOHA. The Chief is responsible for formulating policing strategies, directing nationwide law enforcement and internal security operations, overseeing organizational management and personnel, coordinating territorial and specialized police commands, and ensuring the implementation of government policies, laws, and public security objectives throughout American Samoa.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Exercises overall command and control of the MPF.</li>
-            <li>Advises the MOHA on policing, public order, and internal security matters.</li>
-            <li>Formulates national policing policies, strategic priorities, and organizational objectives.</li>
-            <li>Directs nationwide law enforcement, crime prevention, criminal investigation, and public security operations.</li>
-            <li>Supervises all territorial police commands, specialized departments, and headquarters directorates.</li>
-            <li>Approves operational plans for major national security incidents, emergencies, and special operations.</li>
-            <li>Oversees police personnel management, including appointments, promotions, discipline, and professional development.</li>
-            <li>Ensures coordination among the MPF, other government ministries, the armed forces (Tatmadaw), and other domestic security agencies, as required.</li>
-            <li>Manages organizational resources, budgeting, logistics, communications, and modernization initiatives.</li>
-            <li>Represents the MPF in official national and international law enforcement engagements.</li>
-            <li>Ensures compliance with applicable laws, regulations, and directives governing police administration and operations.</li>
-            <li>Reports to the MOHA on the operational readiness, effectiveness, and administrative performance of the MPF.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.police-classification-modals')
 
 <div class="modal fade" id="policeAreaLayerModal" tabindex="-1" aria-labelledby="policeAreaLayerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:1600px; width:calc(100% - 2rem); margin-left:auto; margin-right:auto;">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header py-2">
         <div class="d-flex align-items-center gap-2">
@@ -556,20 +383,20 @@
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body p-0" style="overflow:hidden;">
-        <iframe
-            src="{{ asset('police-area-layer.html') }}"
-            title="American Samoa Police Force — Police Area Layering and Administrative Equivalents"
-            loading="lazy"
-            style="display:block; width:100%; height:80vh; border:0;"
-        ></iframe>
+      <div class="modal-body">
+        <ol class="mb-0">
+          <li class="mb-3"><strong>Strategic Command:</strong> Constitutes the highest policy-making, executive direction, and interagency governance tier of the agency, led by the Governor and the Commissioner. This level focuses on long-term public safety planning, legislative advocacy, cabinet-level alignment, budget formulation, and high-level policy implementation. Strategic Command sets territorial law enforcement priorities, authorizes agency-wide administrative reorganizations, negotiates federal grant frameworks, and maintains executive inter-agency relationships with the Department of Legal Affairs, Homeland Security, and federal law enforcement authorities.</li>
+          <li class="mb-3"><strong>Headquarters Command:</strong> Functions as the administrative and operational heart of the agency, centralized at the Fagatogo Central Station under the direction of the Deputy Commissioner. This functional layer manages territory-wide operational coordination, central 911 dispatch services, internal affairs oversight, executive decision-making, and administrative support functions. Headquarters Command translates strategic policy into actionable General Orders, manages central records archiving, oversees institutional logistics and fleet maintenance, and maintains real-time command control over emergency deployments across all districts.</li>
+          <li class="mb-3"><strong>Functional Command:</strong> Encompasses the specialized operational bureaus and divisions that deliver targeted law enforcement capabilities across the territory. Led by Bureau Commanders and Division Captains/Majors, this level includes the Bureau of Investigations, Special Operations &amp; Support, and Police Services. Functional Command provides technical expertise, complex criminal investigations, specialized tactical enforcement, technical training, and regulatory compliance within specific subject-matter mandates.</li>
+          <li><strong>Territorial Command:</strong> Represents the front-line field deployment and precinct management network responsible for day-to-day public safety delivery across American Samoa's geographic districts. Led by Substation Commanders and Police Post OICs, this command level operates through regional precincts&mdash;including Tafuna, Leone, Fagaitua, and Ta&#699;&#363; substations&mdash;alongside outer-island posts like Ofu-Olosega and Swains Island. Territorial Command executes continuous mobile patrols, traffic safety enforcement, initial emergency call response, community policing, and local dispute resolution, directly connecting police services to residents and traditional village leadership (<em>Matai</em>) across the territory.</li>
+        </ol>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal fade" id="cmdFlowModal" tabindex="-1" aria-labelledby="cmdFlowLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered image-modal-dialog" style="--img-ratio:1.5;">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header py-2">
         <div class="d-flex align-items-center gap-2">
@@ -578,8 +405,16 @@
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body image-modal-body">
-            <img src="{{ asset('images/cmd-flow.png') }}" alt="Police Command Flow">
+      <div class="modal-body">
+        <p>The command flow of the <strong>American Samoa Department of Public Safety (DPS)</strong> follows a strict vertical paramilitary hierarchy that originates with the Governor of American Samoa as the supreme executive authority and descends through the Commissioner, who exercises agency-wide statutory and operational control. The Commissioner provides direct administrative and daily operational oversight to the Deputy Commissioner, who functions as the chief operating officer and manages the agency's primary command pillars. Executive directives then flow to Bureau Commanders leading specialized divisions&mdash;such as the Bureau of Police Services, Bureau of Investigations, and Special Operations&mdash;before reaching Substation Commanders and Police Post OICs. Field personnel, shift watch officers, and specialized detectives carry out operational tasks within this structured chain of command, ensuring clear reporting channels, standardized unit accountability, and unified tactical execution from central headquarters to outer island detachments.</p>
+
+        <h6 class="fw-bold">Reporting Relationships &mdash; Information Flows</h6>
+        <ol class="mb-0">
+          <li class="mb-3"><strong>Divisional Reporting:</strong> Manages the daily operational information flow from field personnel to shift supervisors and substation leadership across all precinct jurisdictions. Patrol officers, traffic enforcement units, and desk sergeants compile routine shift logs, incident summaries, traffic citation records, and preliminary offense reports at the precinct level. Shift watch commanders systematically review and sign off on these reports before transmitting them to the Substation Commander, who aggregates district-wide operational metrics.</li>
+          <li class="mb-3"><strong>Specialized Case Reporting:</strong> Governs the secure transmission of sensitive investigative intelligence, felony case files, and tactical data directly to specialized bureau leads. Detectives and technical specialists within the Criminal Investigation Division, Vice and Narcotics Division, Juvenile and Domestic Violence Division, and Forensics compile comprehensive case dockets, forensic analysis findings, search warrant affidavits, and evidence logs. These specialized filings bypass routine patrol channels and are submitted directly to division heads and the Bureau of Investigations Commander.</li>
+          <li class="mb-3"><strong>Headquarters Reporting:</strong> Consolidates district incident logs, bureau activity summaries, and operational intelligence into unified executive briefings at Fagatogo Central Station. Substation Commanders and Bureau Leads submit daily operational briefings, major crime notifications, high-risk incident logs, and facility status reports to the Deputy Commissioner. The Deputy Commissioner synthesizes these departmental inputs into comprehensive executive reviews for the Commissioner.</li>
+          <li><strong>Strategic and Administrative Reporting:</strong> Handles the long-term documentation, interagency reporting, budget compliance, and statutory governance required of the agency. The Commissioner, supported by administrative leads, compiles annual performance reports, legislative budget justifications, federal grant compliance documents (such as National Highway Traffic Safety Administration (NHTSA) and Motor Carrier Safety Assistance Program (MCSAP) filings), and official Uniform Crime Reporting (UCR) statistics. These high-level administrative dossiers are submitted to the Governor, the Legislature (<em>Fono</em>), federal oversight agencies, and regional partners such as the Pacific Islands Chiefs of Police (PICP).</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -1238,6 +1073,8 @@ function addPoliceMarkers(data) {
 }
 
 // === Apply Filter POLICE ===
+@include('partials.police-category-filter-script')
+
 async function applyPoliceFilters() {
     const provs = [...document.querySelectorAll('.province-checkbox:checked')].map(e => e.value);
     const categories = [...document.querySelectorAll('input[name="policeCategory"]:checked')].map(e => e.value);
@@ -1248,7 +1085,6 @@ async function applyPoliceFilters() {
 
     if (policeName) filters.name = policeName;
     if (provs.length > 0) filters.provinces = provs;
-    if (categories.length > 0) filters.categories = categories;
 
     if (radius > 0 && lastClickedLocation) {
         filters.radius = radius;
@@ -1258,24 +1094,12 @@ async function applyPoliceFilters() {
 
     const result = await fetchPoliceData(filters);
 
-    const polices = result.polices;
-    const categoryCounts = result.categoryCounts;
-
+    updatePoliceCategoryCounts(combinedPanelDiv, result.polices);
+    const polices = result.polices.filter(police => matchesPoliceCategory(police, categories));
     addPoliceMarkers(polices);
 
-    document.getElementById('totalCountDisplay').innerHTML =
+    combinedPanelDiv.querySelector('#totalCountDisplay').innerHTML =
         `<strong>Police:</strong> ${polices.length}`;
-
-    Object.keys(categoryCounts).forEach(cat => {
-
-        const id = cat.replace(/[^a-zA-Z0-9]/g,'-');
-
-        const el = document.getElementById(`count-${id}`);
-
-        if (el) {
-            el.textContent = categoryCounts[cat];
-        }
-    });
 }
 
 // === Filter Panel (Custom Google Maps Control) ===
@@ -1338,17 +1162,7 @@ combinedPanelDiv.innerHTML = `
                 @endforeach
             </select>
             <label>Category:</label>
-            ${[
-                'National Police (HQ)',
-                'Province / Territory',
-                'Municipality / Locality',
-                'Township Police Station',
-            ].map(c => `
-            <label style="display:block;font-size:13px;margin-bottom:5px;">
-                <input type="checkbox" name="policeCategory" value="${c}">
-                ${c} (<span id="count-${c.replace(/[^a-zA-Z0-9]/g,'-')}">0</span>)
-            </label>
-            `).join('')}
+            @include('partials.police-category-options')
             <hr>
             <div class="filter-box" id="provinceSelect">
                 <label class="filter-label">Province</label>
@@ -1693,7 +1507,7 @@ setTimeout(() => {
 // Retry sampai badge kategori (di dalam combinedPanelDiv) benar-benar ada di DOM,
 // supaya jumlah per kategori tidak "nyangkut" di 0 saat load pertama.
 function initialApplyFilters() {
-    if (!document.querySelector('#filterPanel [id^="count-"]')) {
+    if (!document.querySelector('#filterPanel [data-police-category-count]')) {
         setTimeout(initialApplyFilters, 200);
         return;
     }

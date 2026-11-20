@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!body || body.dataset.medicalTabsInitialized === 'true') return;
 
         const isPrivateHospital = ['level11Modal', 'level33Modal', 'level55Modal'].includes(modalId);
-        const modalTabs = tabs.filter(tab => !isPrivateHospital || tab.key !== 'government-health-insurance');
+        const hideInsurance = isPrivateHospital || modal.hasAttribute('data-hide-government-health-insurance');
+        const modalTabs = tabs.filter(tab => !hideInsurance || tab.key !== 'government-health-insurance');
 
         modal.querySelector('.modal-dialog')?.classList.add('medical-modal-dialog');
 

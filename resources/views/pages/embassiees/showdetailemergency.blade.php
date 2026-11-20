@@ -483,10 +483,10 @@
                                   <small>Private</small>
                               </button>
 
-                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#">
+                              <span class="btn p-1">
                                   <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:18px; height:18px;">
                                   <small>Helipad</small>
-                              </button>
+                              </span>
                             </div>
                           </div>
 
@@ -500,80 +500,8 @@
                         <div>
                             <div class="class-header class-medical-classification">MEDICAL FACILITY CLASSIFICATION</div>
                         </div>
-                        <div style="display: flex; flex-direction: row;">
-                            <!-- Advanced -->
-                            <div class="class-column">
-                              <div class="class-header class-advanced">&nbsp</div>
-                              <div class="hospital-list">
-                                <div class="hospital-item">
-                                  <button class="btn p-1">
-                                    <small>Public</small>
-                                  </button>
-                                </div>
-                                <div class="hospital-item">
-                                    <button class="btn p-1">
-                                      <small>Private</small>
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                             <!-- Advanced -->
-                            <div class="class-column">
-                              <div class="class-header class-advanced">Advanced</div>
-                              <div class="hospital-list">
-                                <div class="hospital-item">
-                                  <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
-                                    <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
-                                    <small>Tertiary</small>
-                                  </button>
-                                </div>
-                                <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
-                                      <small>Large Private</small>
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <!-- Intermediate -->
-                            <div class="class-column">
-                              <div class="class-header class-intermediate">Intermediate</div>
-                              <div class="hospital-list">
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
-                                      <small>Secondary</small>
-                                    </button>
-                                  </div>
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level33Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:24px; height:24px;">
-                                      <small>Medium Private</small>
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <!-- Basic -->
-                            <div class="class-column">
-                              <div class="class-header class-basic">Basic</div>
-                              <div class="hospital-list">
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level22Modal">
-                                        <img src="https://id.concordreview.com/wp-content/uploads/2026/02/hospital_pin-orange.png" style="width:24px; height:24px;">
-                                        <small>Primary</small>
-                                    </button>
-                                  </div>
-                                   <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
-                                        <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
-                                        <small>Small Private</small>
-                                    </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            @include('partials.medical-classification-entries')
                         </div>
                     </div>
 
@@ -592,20 +520,20 @@
 
                                     <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police2Modal">
                                         <img src="{{ asset('images/Layer2.png') }}" style="width:12px; height:12px;">
-                                        <small>Province / Territory</small>
+                                        <small>Police Sub Station</small>
                                     </button>
                                 </div>
 
                                 <!-- Baris Bawah (2) -->
-                                <div class="hospital-item" data-bs-toggle="modal" data-bs-target="#police3Modal">
-                                    <button class="btn p-1">
+                                <div class="hospital-item">
+                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police3Modal">
                                          <img src="{{ asset('images/Layer3.png') }}" style="width:12px; height:12px;">
-                                        <small>Municipality / Locality</small>
+                                        <small>Police Post</small>
                                     </button>
 
                                     <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#police4Modal">
                                         <img src="{{ asset('images/Layer4.png') }}" style="width:12px; height:12px;">
-                                        <small>Township Police Station</small>
+                                        <small>Specialized Unit</small>
                                     </button>
                                 </div>
 
@@ -648,177 +576,7 @@
 
 </div>
 
-<div class="modal fade" id="police1Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="{{ asset('images/Layer1.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">National Police (HQ)</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> National Police Commander
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Lieutenant General or Police Major General
-        </p>
-        <p class="p-modal text-justify">
-            <b>Role:</b> Highest commander of the MPF
-        </p>
-        <p class="p-modal text-justify">
-            Functions as the supreme professional and operational leader of the MPF, exercising overall command, control, and administration of the national police organization under the authority of the MOHA. The Chief is responsible for formulating policing strategies, directing nationwide law enforcement and internal security operations, overseeing organizational management and personnel, coordinating territorial and specialized police commands, and ensuring the implementation of government policies, laws, and public security objectives throughout American Samoa.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Exercises overall command and control of the MPF.</li>
-            <li>Advises the MOHA on policing, public order, and internal security matters.</li>
-            <li>Formulates national policing policies, strategic priorities, and organizational objectives.</li>
-            <li>Directs nationwide law enforcement, crime prevention, criminal investigation, and public security operations.</li>
-            <li>Supervises all territorial police commands, specialized departments, and headquarters directorates.</li>
-            <li>Approves operational plans for major national security incidents, emergencies, and special operations.</li>
-            <li>Oversees police personnel management, including appointments, promotions, discipline, and professional development.</li>
-            <li>Ensures coordination among the MPF, other government ministries, the armed forces (Tatmadaw), and other domestic security agencies, as required.</li>
-            <li>Manages organizational resources, budgeting, logistics, communications, and modernization initiatives.</li>
-            <li>Represents the MPF in official national and international law enforcement engagements.</li>
-            <li>Ensures compliance with applicable laws, regulations, and directives governing police administration and operations.</li>
-            <li>Reports to the MOHA on the operational readiness, effectiveness, and administrative performance of the MPF.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="police2Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer2.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">State Police Force / Region Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Top territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Brigadier General or Police Colonel
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> State or region (division) government level
-        </p>
-        <p class="p-modal text-justify">
-            Constitutes the highest territorial command of the MPF in a State or Region, implementing national policing policies while directing all law enforcement, public order, criminal investigation, and administrative activities throughout its jurisdiction. State and regional police force is the principal operational link between MPF Headquarters and subordinate Municipality / Localitys.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Exercises command over all police units within the State or Region.</li>
-            <li>Implements national policing policies and operational directives issued by MPF Headquarters.</li>
-            <li>Coordinates major law enforcement, public security, and crime prevention operations.</li>
-            <li>Supervises district police forces and evaluates their operational performance.</li>
-            <li>Directs responses to major emergencies, disasters, and public order incidents.</li>
-            <li>Coordinates policing activities with the State or Region Government and other public authorities.</li>
-            <li>Oversees personnel administration, logistics, budgeting, and resource allocation within the territorial command.</li>
-            <li>Reports operational, intelligence, and administrative matters to MPF Headquarters.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="police3Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer3.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">District Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Second-tier territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Lieutenant Colonel or Police Major
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> District level
-        </p>
-        <p class="p-modal text-justify">
-            Represents the intermediate territorial command responsible for coordinating police operations among multiple township police forces within a district. District Police Forces are classified into two (2) classes depending on the area, population, and development:
-        </p>
-        <ul>
-            <li>Commanders of the A Class District Police Forces are Police Lieutenant Colonels.</li>
-            <li>Commanders of the B Class District Police Forces are Police Majors.</li>
-        </ul>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Commands all township police forces within the district.</li>
-            <li>Coordinates district-wide crime prevention and law enforcement operations.</li>
-            <li>Supervises investigations involving multiple townships or significant criminal cases.</li>
-            <li>Monitors public order and security conditions throughout the district.</li>
-            <li>Allocates personnel and operational resources among township commands.</li>
-            <li>Reviews operational performance and administrative compliance of subordinate units.</li>
-            <li>Coordinates with district administrative authorities and judicial institutions.</li>
-            <li>Reports district policing activities to the State or Regional Police Command.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="police4Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-             <img src="{{ asset('images/Layer4.png') }}" style="width:15px; height:15px; margin-right:10px; flex-shrink:0;">
-            <h5 class="modal-title" id="disclaimerLabel">Township Police Force</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p class="p-modal text-justify">
-            <b>Command level:</b> Third-tier territorial police command
-        </p>
-        <p class="p-modal text-justify">
-            <b>Typical Head Rank:</b> Police Major or Police Captain and can also be commanded by a Police Lieutenant
-        </p>
-        <p class="p-modal text-justify">
-            <b>Administrative Equivalent:</b> Township level
-        </p>
-        <p class="p-modal text-justify">
-            Embodies the primary operational police command responsible for delivering day-to-day policing services in a township. Township police force directs routine law enforcement, criminal investigations, patrol operations, public safety activities, and the supervision of police stations and outposts within its jurisdiction.
-        </p>
-        <p class="p-modal text-justify">
-            <b>Responsibilities:</b>
-        </p>
-        <ul>
-            <li>Directs routine policing operations throughout the township.</li>
-            <li>Supervises police stations and police outposts.</li>
-            <li>Prevents and investigates criminal offences.</li>
-            <li>Maintains public order and responds to emergencies.</li>
-            <li>Conducts patrols and crime prevention initiatives.</li>
-            <li>Coordinates local intelligence gathering and security monitoring.</li>
-            <li>Cooperates with township administrative authorities and community organizations.</li>
-            <li>Submits operational and administrative reports to the District Police Force.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.police-classification-modals')
 
 <div class="modal fade" id="level1Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -924,762 +682,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">SMALL PRIVATE HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Small Private Hospital is a low-capacity facility offering basic inpatient and outpatient services, often functioning similarly to an expanded clinic. It primarily supports primary-level care.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank"> American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide basic medical care and minor procedures</li>
-                    <li>Serve local community healthcare needs</li>
-                    <li>Refer most moderate and complex cases to higher-level hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically <50 beds</strong></li>
-                    <li>
-                        <strong>Core Services</strong>
-                        <ul>
-                            <li>General practice / basic internal medicine</li>
-                            <li>Minor surgical procedures</li>
-                            <li>Basic maternal and child health services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Limitations</strong>
-                        <ul>
-                            <li>No advanced specialist services</li>
-	                        <li>No complex surgical capability</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory services (comparable to Type C) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (limited or none)</li>
-                            <li>No advanced diagnostics</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level22Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-orange.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">PRIMARY HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                District Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Primary-Level District Hospital refers to smaller or less-developed district hospitals that is closer to township-level capability, providing basic hospital services.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide first-line hospital care</li>
-                    <li>Manage common medical conditions</li>
-                    <li>Refer patients to secondary hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 50–100 beds</strong></li>
-                    <li>
-                        <strong>Basic Services</strong>
-                        <ul>
-                            <li>General medicine</li>
-                            <li>Minor surgery</li>
-                            <li>Maternal and child health</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Type C Basic laboratory services <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><U>Note:</u></b> A District Hospital is classified as Primary when it has limited capability, minimal specialist services, and functions similarly to a large township hospital.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Township Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Township Hospital is the main primary-level hospital, and is the first referral level within the public health system.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide primary hospital care</li>
-                    <li>Manage common and moderate conditions</li>
-                    <li>Refer patients to district and state hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 25–100 beds</strong></li>
-                    <li>
-                        <strong>Core Services</strong>
-                        <ul>
-                            <li>General medicine</li>
-                            <li>Basic surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory (Type C) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (X-ray in some facilities) </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Station Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Station Hospital is the lowest-level hospital facility, typically located in rural or remote areas, providing essential healthcare services.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Serve as first contact healthcare facility</li>
-                    <li>Provide basic medical services</li>
-                    <li>Refer patients to township hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 16–25 beds</strong></li>
-                    <li>
-                        <strong>Basic Services</strong>
-                        <ul>
-                            <li>Outpatient and limited inpatient care</li>
-                            <li>Maternal and child health</li>
-                            <li>Basic treatment and stabilization</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory testing <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Minimal diagnostic capability  </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">MEDIUM PRIVATE HOSPITAL</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Medium Private Hospital is a moderate-capacity facility providing general and selected specialist services. It primarily supports secondary-level care, managing common and moderately complex conditions.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank">American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide general inpatient and outpatient care</li>
-                    <li>Manage routine and moderate-complexity medical and surgical cases</li>
-                    <li>Refer complex cases to larger private or public hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically 50–150 beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Available Services </strong>
-                        <ul>
-                            <li>Basic ICU or high-dependency units (limited)</li>
-                            <li>Basic surgical procedures</li>
-                            <li>Routine emergency care</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Laboratory services (comparable to Type B) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (X-ray, ultrasound)</li>
-                            <li>Limited advanced diagnostics</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">SECONDARY HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                General Hospital (Secondary - At the Regional / State or District-Level)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Secondary-Level General Hospital in American Samoa refers to general hospitals located outside major cities, typically at the state/regional or district level. These hospitals provide broad multi-specialty services but do not possess full tertiary-level subspecialty capability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Regional referral centers for township and station hospitals</li>
-                    <li>Provide multi-specialty care for moderate to complex conditions</li>
-                    <li>Stabilize and refer advanced cases to tertiary hospitals</li>
-                    <li>Support regional healthcare delivery and workforce training</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 100–500 beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Orthopedics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>Basic ICU / High Dependency Unit (HDU)</li>
-                            <li>Emergency care services</li>
-                            <li>Selected specialist services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Standard elective and emergency surgeries</li>
-                            <li>Basic trauma center</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: X-ray, Ultrasound, CT Scan (in most facilities)</li>
-                            <li>Type B / Type A Laboratory (level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a> </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><U>Note:</u></b> A General Hospital is classified as Secondary when it is a regional (not national) referral center, has limited subspecialty coverage, and lacks the full advanced capabilities of tertiary hospitals.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Regional / State Hospital (Secondary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Regional/State Hospital is a core secondary-level facility by definition in American Samoa’s health system. It is designed to function as the main referral hospital in a state or region, providing expanded clinical services beyond district level.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Primary referral center within a state or region</li>
-                    <li>Provide expanded specialist services</li>
-                    <li>Support district and township hospitals</li>
-                    <li>Contribute to regional training and service delivery</li>
-                </ul>
-            </p>
-             <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 200–500 beds</strong></li>
-                    <li>
-                        <strong>Core and Selected Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Orthopedics</li>
-                            <li>Anesthesiology</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>ICU and emergency services</li>
-                            <li>Expanded diagnostic capabilities</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, Ultrasound, CT in most facilities)</li>
-                            <li>Laboratory (Type B / Type A level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                District Hospital (Secondary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A District Hospital classified as a Secondary facility represents an upgraded district-level facility with expanded services and capacity, and is an intermediate referral center.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Township hospitals referral center</li>
-                    <li>Manage moderate to complex medical conditions</li>
-                    <li>Provide stabilization and referral to higher-level hospitals</li>
-                </ul>
-            </p>
-             <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 100–200+ beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>Limited ICU capability (in upgraded facilities)</li>
-                            <li>Emergency and inpatient care</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, limited CT in some cases)</li>
-                            <li>Type B Laboratory (Type B / Type A level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> A District Hospital is classified as Secondary when it has higher bed capacity, expanded clinical services, and a defined referral role for surrounding township hospitals.
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">LARGE PRIVATE HOSPITAL</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Large Private Hospital in American Samoa is a high-capacity, multi-specialty facility that provides comprehensive secondary to limited tertiary-level care. These hospitals are typically located in major urban centers and are equipped with advanced medical technology and a wide range of specialist services.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank">American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide advanced diagnostic and therapeutic services across multiple specialties</li>
-                    <li>Function as major private referral centers for complex cases</li>
-                    <li>Offer an alternative to public tertiary hospitals for high-end care</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically 150–500+ beds</strong></li>
-                    <li>
-                        <strong>Core and Advanced Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine (with subspecialties)</li>
-                            <li>General Surgery</li>
-                            <li>Orthopedic Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Cardiology</li>
-                            <li>Neurology</li>
-                            <li>Oncology (in some facilities)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Services </strong>
-                        <ul>
-                            <li>Intensive Care Units (ICU, NICU)</li>
-                            <li>Advanced imaging (CT, MRI)</li>
-                            <li>Cardiac diagnostics and procedures</li>
-                            <li>Endoscopy and minimally invasive surgery</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Full laboratory services (comparable to Type A/B) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Comprehensive imaging services</li>
-                            <li>24/7 emergency services</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Tertiary Hospital</h5>
-        </div>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Tertiary Public Hospital in American Samoa represents the highest level of care, typically consisting of major city General Hospitals, Teaching Hospitals, and Specialist Hospitals located in key urban centers including Yangon, Mandalay, and Nay Pyi Taw. These hospitals are national referral centers, managing the most complex and specialized medical conditions while also being hubs for medical education and research.
-                However, a General Hospital is a hospital type rather than a fixed level of care, and is categorized as being either Secondary or Tertiary depending on its bed capacity, clinical capability, specialist, and subspecialist availability, and referral role.
-                Tertiary General Hospitals are typically large facilities (above ≈500 beds) with full subspecialty coverage, advanced diagnostics (e.g., MRI, CT, specialized laboratories), and the ability to perform complex procedures including cardiac or neurosurgery. Tertiary General Hospitals are national referral centers and are mostly located in major cities, including Yangon, Mandalay, and Nay Pyi Taw.
-                In contrast, Secondary General Hospitals are usually smaller (≈50 – 500 beds), provide core specialties with limited subspecialty, and manage moderate-complexity cases while referring advanced cases upward. Secondary General Hospitals typically are regional referral centers and are commonly located at the state/regional or district level.
-                Consistent with Ministry of Health and Sports (MOHS) guidance, classification is determined by service capability and referral function, not by the hospital name itself. A General Hospital is classified as Tertiary when it operates as a high-capability national referral center, and Secondary when it is operating as a regional-level facility with more limited scope of care.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                General Hospitals (Tertiary - Major City)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Major City General Hospital is a large, multi-specialty tertiary hospital located in major urban centers including Yangon, Mandalay, and Nay Pyi Taw. It provides comprehensive clinical services across all major disciplines and functions as a national referral center, managing a wide spectrum of complex medical and surgical cases.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>National referral centers for complex and critical cases</li>
-                    <li>Provide advanced and subspecialty medical care</li>
-                    <li>Function as teaching and training institutions for doctors and specialists</li>
-                    <li>Lead clinical research and advanced medical innovation</li>
-                    <li>Support lower-level hospitals through referral and technical guidance</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately above 500 beds</strong></li>
-                    <li>
-                        <strong>Core and Subspecialties</strong>
-                        <ul>
-                            <li>Internal Medicine (cardiology, neurology, nephrology, oncology, etc.)</li>
-                            <li>General Surgery</li>
-                            <li>Cardiothoracic Surgery</li>
-                            <li>Neurosurgery</li>
-                            <li>Orthopedic Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics (including subspecialties)</li>
-                            <li>Anesthesiology</li>
-                            <li>Emergency Medicine</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Organ transplantation (in selected centers)</li>
-                            <li>Cardiac surgery and catheterization laboratories</li>
-                            <li>Radiation oncology and advanced cancer care</li>
-                            <li>Dialysis and renal replacement therapy</li>
-                            <li>Advanced intensive care (ICU, NICU, CCU)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Complex and high-risk surgeries</li>
-                            <li>Multidisciplinary surgical procedures</li>
-                            <li>Advanced minimally invasive surgery</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, Ultrasound, CT Scan, MRI, PET-CT)</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Teaching Hospital (Tertiary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Teaching Hospital is a tertiary-level hospital formally affiliated with medical universities, and is a center for medical education, specialist training, and clinical research. Teaching hospitals provide highly specialized care while simultaneously training undergraduate and postgraduate medical personnel.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Train medical students, interns, and specialist residents</li>
-                    <li>Provide advanced and subspecialty clinical services</li>
-                    <li>Conduct clinical research and academic activities</li>
-                    <li>National referral centers for complex cases</li>
-                </ul>
-            </p>
-
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately above 500 beds</strong></li>
-                    <li>
-                        <strong>Core and Subspecialties</strong>
-                        <ul>
-                            <li>Full range of medical and surgical specialties</li>
-                            <li>Extensive subspecialty departments across disciplines</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Highly specialized procedures (e.g., complex oncology, neurosurgery)</li>
-                            <li>Multidisciplinary care teams</li>
-                            <li>Advanced ICU and critical care units</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Complex and high-risk surgeries</li>
-                            <li>Teaching-integrated surgical practice</li>
-                            <li>Multidisciplinary case management</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: X-ray, Ultrasound, CT Scan, MRI, Advanced imaging modalities</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Teaching Hospitals are inherently tertiary due to their academic function, full specialist coverage, and role in national referral and training systems.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Specialist Hospital (Tertiary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Specialist Hospital is a tertiary-level facility focused on a specific field of medicine, including cardiology, orthopedics, oncology, or infectious diseases. Specialist hospitals provide highly specialized and advanced care within their domain and act as national referral centers for specific conditions.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide specialized care within a defined medical field</li>
-                    <li>National referral centers for specific diseases or procedures</li>
-                    <li>Support other hospitals with specialist expertise</li>
-                    <li>Contribute to advanced clinical practice and training</li>
-                </ul>
-            </p>
-
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 200 – 800+ beds (varies by specialty)</strong></li>
-                    <li>
-                        <strong>Specialized Clinical Focus</strong>
-                        <ul>
-                            <li>Cardiology / Cardiothoracic services</li>
-                            <li>Oncology services</li>
-                            <li>Orthopedic and trauma services</li>
-                            <li>Infectious disease management</li>
-                            <li>Other specialty-specific services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Highly specialized procedures within the field</li>
-                            <li>Advanced disease-specific treatment protocols</li>
-                            <li>Specialized ICU units (e.g., cardiac ICU)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                           <li>Complex specialty-specific surgeries</li>
-                           <li>High-risk and advanced procedures</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: CT Scan, MRI, Specialty-specific imaging systems</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Specialist Hospitals are classified as Tertiary due to their highly specialized capability, advanced procedures, and national referral role, even though their scope is narrower than general hospitals.
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.medical-classification-modals')
 
 @include('partials.medical-classification-tabs')
 
@@ -1839,12 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
             if (distance > radiusKm) return;
 
-            // Filter hospital
-            if (type === 'Hospital' && filters.hospitalLevels?.length > 0) {
-                const level = (item.facility_level || '').toLowerCase();
-                const allowed = filters.hospitalLevels.map(l => l.toLowerCase());
-                if (!allowed.includes(level)) return;
-            }
+            if (type === 'Hospital' && !matchesHospitalLevel(item, filters.hospitalLevels)) return;
 
             // Filter airport
             if (type === 'Airport' && filters.airportClassifications?.length > 0) {
@@ -1853,12 +851,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!categories.some(cat => allowed.includes(cat))) return;
             }
 
-            // Filter police
-            if (type === 'Police' && filters.policeCategories?.length > 0) {
-                const categories = (item.category || '').split(',').map(c => c.trim().toLowerCase());
-                const allowed = filters.policeCategories.map(c => c.toLowerCase());
-                if (!categories.some(cat => allowed.includes(cat))) return;
-            }
+            if (type === 'Police' && !matchesPoliceCategory(item, filters.policeCategories)) return;
 
             const isPolice = type === 'Police';
             const iconSize = isPolice ? new google.maps.Size(12, 12) : new google.maps.Size(24, 24);
@@ -2103,7 +1096,18 @@ document.addEventListener('DOMContentLoaded', () => {
         map.fitBounds(bounds);
     }
 
+    @include('partials.hospital-level-filter-script')
+    @include('partials.police-category-filter-script')
+
     function updateMarkers(filterType, hospitalLevels, airportClassifications, policeCategories) {
+        const hospitalsInRange = nearbyHospitals.filter(hospital => calculateDistance(
+            embassyData.latitude, embassyData.longitude, hospital.latitude, hospital.longitude
+        ) <= radiusKm);
+        updateHospitalLevelCounts(filterContainer, hospitalsInRange);
+        const policeInRange = nearbyPolices.filter(police => calculateDistance(
+            embassyData.latitude, embassyData.longitude, police.latitude, police.longitude
+        ) <= radiusKm);
+        updatePoliceCategoryCounts(filterContainer, policeInRange);
         clearNearbyMarkers();
         if (radiusCircle) radiusCircle.setMap(null);
         addMainEmbassyAndCircle();
@@ -2163,10 +1167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div id="hospitalFilter" style="display:none;">
                 <strong>Facility Level:</strong><br>
-                ${['Class A','Class B','Class C','Class D','Public Health Center (PUSKESMAS)']
-                    .map(lvl => `<label style="display:block;font-size:13px;">
-                        <input type="checkbox" name="hospitalLevel" value="${lvl}"> ${lvl}
-                    </label>`).join('')}
+                @include('partials.hospital-level-options')
             </div>
 
             <div id="airportFilter" style="display:none;margin-top:8px;">
@@ -2178,17 +1179,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div id="policeFilter" style="display:none;margin-top:8px;">
-                <strong>Police Category:</strong><br>
-                ${[
-                    'National Police (HQ)',
-                    'Province / Territory',
-                    'Municipality / Locality',
-                    'Township Police Station',
-                ].map(cat => `
-                    <label style="display:block;font-size:13px;">
-                        <input type="checkbox" name="policeCategory" value="${cat}"> ${cat}
-                    </label>
-                `).join('')}
+                <strong>Category:</strong><br>
+                @include('partials.police-category-options')
             </div>
 
             <button id="resetFilter" class="btn btn-sm btn-secondary mt-3 w-100">Reset Filter</button>
@@ -2427,8 +1419,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // === JALANKAN ===
     initializeMap();
     addMainEmbassyAndCircle();
-    updateMarkers('all', [], [], []);
     const filterContainer = setupFilterControl();
+    updateMarkers('all', [], [], []);
     setupSearchControl(filterContainer);
     setupNearbyCategoryBar();
 });

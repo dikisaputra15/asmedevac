@@ -232,12 +232,12 @@
 
                             <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level4Modal">
                                 <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/regional-domestic-airport.png" style="width:18px; height:18px;">
-                                <small>Regional Domestic</small>
+                                <small>Regional</small>
                             </button>
 
                             <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level2Modal">
                                 <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/civil-military-airport.png" style="width:18px; height:18px;">
-                                <small>Combined (Civil - Military)</small>
+                                <small>Civil-Military</small>
                             </button>
 
                              <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level3Modal">
@@ -249,6 +249,11 @@
                                 <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/private-airport.png" style="width:18px; height:18px;">
                                 <small>Private</small>
                             </button>
+
+                            <span class="btn p-1">
+                                <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:18px; height:18px;">
+                                <small>Helipad</small>
+                            </span>
                         </div>
 
                     </div>

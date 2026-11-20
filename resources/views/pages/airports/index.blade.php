@@ -248,10 +248,7 @@
         <div class="d-flex justify-content-between align-items-center gap-3 my-2">
 
             <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-link p-0 fw-bold text-decoration-underline text-dark" data-bs-toggle="modal" data-bs-target="#disclaimerModal">
-                    <i class="bi bi-info-circle text-primary fs-5"></i>
-                    <small>Disclaimer</small>
-                </button>
+
             </div>
 
             <div class="d-flex align-items-center gap-3 flex-wrap">
@@ -279,7 +276,7 @@
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level2Modal">
                     <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/civil-military-airport.png" style="width:30px; height:30px;">
-                    <small>Combined (Civil - Military)</small>
+                    <small>Civil-Military</small>
                 </button>
 
                 <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level1Modal">
@@ -287,10 +284,10 @@
                     <small>Private</small>
                 </button>
 
-                <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#">
+                <span class="btn p-1">
                     <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:30px; height:30px;">
                     <small>Helipad</small>
-                </button>
+                </span>
             </div>
 
         </div>

@@ -148,9 +148,9 @@ class PoliceController extends Controller
 
         $categoryCounts = [
             'National Police (HQ)' => 0,
-            'Province / Territory' => 0,
-            'Municipality / Locality' => 0,
-            'Township Police Station' => 0,
+            'Police Sub Station' => 0,
+            'Police Post' => 0,
+            'Specialized Unit' => 0,
         ];
 
         foreach ($polices as $police) {

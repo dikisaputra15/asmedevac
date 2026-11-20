@@ -149,6 +149,51 @@
     .class-intermediate { border-bottom: 3px solid #00b050; }
     .class-basic { border-bottom: 3px solid #ffc000; }
 
+    .hospital-classification-legend {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: flex-end;
+        column-gap: 18px;
+        row-gap: 4px;
+    }
+
+    .hospital-classification-label {
+        padding-bottom: 4px;
+        font-size: 14px;
+    }
+
+    .hospital-classification-levels {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hospital-classification-levels .class-column {
+        flex: 1 0 auto;
+        text-align: center;
+    }
+
+    .hospital-classification-levels .class-header {
+        padding: 0 0 3px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .hospital-classification-levels .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .hospital-classification-levels .btn img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+    }
+
     /* Hospital layout */
     .hospital-list {
       display: flex;
@@ -353,100 +398,11 @@
     </div>
 
     <div class="col-md-12">
-        <div class="d-flex justify-content-between align-items-center gap-3 my-2">
-
-        <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-link p-0 fw-bold text-decoration-underline text-dark" data-bs-toggle="modal" data-bs-target="#disclaimerModal">
-                <i class="bi bi-info-circle text-primary fs-5"></i>
-                Disclaimer
-            </button>
-        </div>
-
-        <div class="d-flex align-items-end gap-3">
-            <!-- Classification -->
-            <div style="flex-direction: column;">
-                        <!-- Title -->
-                        <div>
-                            <div class="class-header class-medical-classification">MEDICAL FACILITY CLASSIFICATION</div>
-                        </div>
-                        <div style="display: flex; flex-direction: row;">
-                            <!-- Advanced -->
-                            <div class="class-column">
-                              <div class="class-header class-advanced">&nbsp</div>
-                              <div class="hospital-list">
-                                <div class="hospital-item">
-                                  <button class="btn p-1">
-                                    Public
-                                  </button>
-                                </div>
-                                <div class="hospital-item">
-                                    <button class="btn p-1">
-                                      Private
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                             <!-- Advanced -->
-                            <div class="class-column">
-                              <div class="class-header class-advanced">Advanced</div>
-                              <div class="hospital-list">
-                                <div class="hospital-item">
-                                  <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level66Modal">
-                                    <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:24px; height:24px;">
-                                    <small>Tertiary</small>
-                                  </button>
-                                </div>
-                                <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level55Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:24px; height:24px;">
-                                      <small>Large Private</small>
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <!-- Intermediate -->
-                            <div class="class-column">
-                              <div class="class-header class-intermediate">Intermediate</div>
-                              <div class="hospital-list">
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level44Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:24px; height:24px;">
-                                      <small>Secondary</small>
-                                    </button>
-                                  </div>
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level33Modal">
-                                      <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:24px; height:24px;">
-                                      <small>Medium Private</small>
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-
-                            <!-- Basic -->
-                            <div class="class-column">
-                              <div class="class-header class-basic">Basic</div>
-                              <div class="hospital-list">
-                                  <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level22Modal">
-                                        <img src="https://id.concordreview.com/wp-content/uploads/2026/02/hospital_pin-orange.png" style="width:24px; height:24px;">
-                                        <small>Primary</small>
-                                    </button>
-                                  </div>
-                                   <div class="hospital-item">
-                                    <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level11Modal">
-                                        <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:24px; height:24px;">
-                                        <small>Small Private</small>
-                                    </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-        </div>
-
+        <div class="hospital-classification-legend my-1" role="group" aria-labelledby="hospital-classification-label">
+            <span class="hospital-classification-label" id="hospital-classification-label">Classification:</span>
+            <div class="hospital-classification-levels">
+                @include('partials.medical-classification-entries', ['legendIconSize' => 16])
+            </div>
         </div>
     </div>
 
@@ -469,759 +425,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="level11Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-tosca.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">SMALL PRIVATE HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Small Private Hospital is a low-capacity facility offering basic inpatient and outpatient services, often functioning similarly to an expanded clinic. It primarily supports primary-level care.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank"> American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide basic medical care and minor procedures</li>
-                    <li>Serve local community healthcare needs</li>
-                    <li>Refer most moderate and complex cases to higher-level hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically <50 beds</strong></li>
-                    <li>
-                        <strong>Core Services</strong>
-                        <ul>
-                            <li>General practice / basic internal medicine</li>
-                            <li>Minor surgical procedures</li>
-                            <li>Basic maternal and child health services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Limitations</strong>
-                        <ul>
-                            <li>No advanced specialist services</li>
-	                        <li>No complex surgical capability</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory services (comparable to Type C) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (limited or none)</li>
-                            <li>No advanced diagnostics</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level22Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-orange.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">PRIMARY HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                District Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Primary-Level District Hospital refers to smaller or less-developed district hospitals that is closer to township-level capability, providing basic hospital services.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide first-line hospital care</li>
-                    <li>Manage common medical conditions</li>
-                    <li>Refer patients to secondary hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 50–100 beds</strong></li>
-                    <li>
-                        <strong>Basic Services</strong>
-                        <ul>
-                            <li>General medicine</li>
-                            <li>Minor surgery</li>
-                            <li>Maternal and child health</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Type C Basic laboratory services <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><U>Note:</u></b> A District Hospital is classified as Primary when it has limited capability, minimal specialist services, and functions similarly to a large township hospital.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Township Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Township Hospital is the main primary-level hospital, and is the first referral level within the public health system.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide primary hospital care</li>
-                    <li>Manage common and moderate conditions</li>
-                    <li>Refer patients to district and state hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 25–100 beds</strong></li>
-                    <li>
-                        <strong>Core Services</strong>
-                        <ul>
-                            <li>General medicine</li>
-                            <li>Basic surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory (Type C) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (X-ray in some facilities) </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Station Hospital (Primary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Station Hospital is the lowest-level hospital facility, typically located in rural or remote areas, providing essential healthcare services.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Serve as first contact healthcare facility</li>
-                    <li>Provide basic medical services</li>
-                    <li>Refer patients to township hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 16–25 beds</strong></li>
-                    <li>
-                        <strong>Basic Services</strong>
-                        <ul>
-                            <li>Outpatient and limited inpatient care</li>
-                            <li>Maternal and child health</li>
-                            <li>Basic treatment and stabilization</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Basic laboratory testing <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Minimal diagnostic capability  </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level33Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-green.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">MEDIUM PRIVATE HOSPITAL</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Medium Private Hospital is a moderate-capacity facility providing general and selected specialist services. It primarily supports secondary-level care, managing common and moderately complex conditions.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank">American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide general inpatient and outpatient care</li>
-                    <li>Manage routine and moderate-complexity medical and surgical cases</li>
-                    <li>Refer complex cases to larger private or public hospitals</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically 50–150 beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Available Services </strong>
-                        <ul>
-                            <li>Basic ICU or high-dependency units (limited)</li>
-                            <li>Basic surgical procedures</li>
-                            <li>Routine emergency care</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Laboratory services (comparable to Type B) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Basic imaging (X-ray, ultrasound)</li>
-                            <li>Limited advanced diagnostics</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level44Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-         <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-purple.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">SECONDARY HOSPITAL</h5>
-         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                General Hospital (Secondary - At the Regional / State or District-Level)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Secondary-Level General Hospital in American Samoa refers to general hospitals located outside major cities, typically at the state/regional or district level. These hospitals provide broad multi-specialty services but do not possess full tertiary-level subspecialty capability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Regional referral centers for township and station hospitals</li>
-                    <li>Provide multi-specialty care for moderate to complex conditions</li>
-                    <li>Stabilize and refer advanced cases to tertiary hospitals</li>
-                    <li>Support regional healthcare delivery and workforce training</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 100–500 beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Orthopedics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>Basic ICU / High Dependency Unit (HDU)</li>
-                            <li>Emergency care services</li>
-                            <li>Selected specialist services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Standard elective and emergency surgeries</li>
-                            <li>Basic trauma center</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: X-ray, Ultrasound, CT Scan (in most facilities)</li>
-                            <li>Type B / Type A Laboratory (level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a> </li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><U>Note:</u></b> A General Hospital is classified as Secondary when it is a regional (not national) referral center, has limited subspecialty coverage, and lacks the full advanced capabilities of tertiary hospitals.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Regional / State Hospital (Secondary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Regional/State Hospital is a core secondary-level facility by definition in American Samoa’s health system. It is designed to function as the main referral hospital in a state or region, providing expanded clinical services beyond district level.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Primary referral center within a state or region</li>
-                    <li>Provide expanded specialist services</li>
-                    <li>Support district and township hospitals</li>
-                    <li>Contribute to regional training and service delivery</li>
-                </ul>
-            </p>
-             <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 200–500 beds</strong></li>
-                    <li>
-                        <strong>Core and Selected Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Orthopedics</li>
-                            <li>Anesthesiology</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>ICU and emergency services</li>
-                            <li>Expanded diagnostic capabilities</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, Ultrasound, CT in most facilities)</li>
-                            <li>Laboratory (Type B / Type A level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                District Hospital (Secondary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A District Hospital classified as a Secondary facility represents an upgraded district-level facility with expanded services and capacity, and is an intermediate referral center.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Township hospitals referral center</li>
-                    <li>Manage moderate to complex medical conditions</li>
-                    <li>Provide stabilization and referral to higher-level hospitals</li>
-                </ul>
-            </p>
-             <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 100–200+ beds</strong></li>
-                    <li>
-                        <strong>Core Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine</li>
-                            <li>General Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Intermediate Services </strong>
-                        <ul>
-                            <li>Limited ICU capability (in upgraded facilities)</li>
-                            <li>Emergency and inpatient care</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, limited CT in some cases)</li>
-                            <li>Type B Laboratory (Type B / Type A level depending on facility) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> A District Hospital is classified as Secondary when it has higher bed capacity, expanded clinical services, and a defined referral role for surrounding township hospitals.
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level55Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital_pin-blue.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">LARGE PRIVATE HOSPITAL</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Large Private Hospital in American Samoa is a high-capacity, multi-specialty facility that provides comprehensive secondary to limited tertiary-level care. These hospitals are typically located in major urban centers and are equipped with advanced medical technology and a wide range of specialist services.
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Unlike public hospitals, private hospitals in American Samoa are not formally classified into tiers by the government. Instead, they are regulated under licensing frameworks and industry standards (e.g., <a href="https://www.mphaAmerican Samoa.org/" target="_blank">American Samoa Private Hospitals’ Association</a>), while their functional classification is analytically derived based on bed capacity, clinical capability, diagnostic infrastructure, and specialist availability.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide advanced diagnostic and therapeutic services across multiple specialties</li>
-                    <li>Function as major private referral centers for complex cases</li>
-                    <li>Offer an alternative to public tertiary hospitals for high-end care</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, typically 150–500+ beds</strong></li>
-                    <li>
-                        <strong>Core and Advanced Specialties</strong>
-                        <ul>
-                            <li>Internal Medicine (with subspecialties)</li>
-                            <li>General Surgery</li>
-                            <li>Orthopedic Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics</li>
-                            <li>Cardiology</li>
-                            <li>Neurology</li>
-                            <li>Oncology (in some facilities)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Services </strong>
-                        <ul>
-                            <li>Intensive Care Units (ICU, NICU)</li>
-                            <li>Advanced imaging (CT, MRI)</li>
-                            <li>Cardiac diagnostics and procedures</li>
-                            <li>Endoscopy and minimally invasive surgery</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Full laboratory services (comparable to Type A/B) <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                            <li>Comprehensive imaging services</li>
-                            <li>24/7 emergency services</li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="level66Modal" tabindex="-1" aria-labelledby="disclaimerLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:800px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="d-flex align-items-center">
-            <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/hospital-pin-red.png" style="width:30px; height:30px;">
-            <h5 class="modal-title" id="disclaimerLabel">Tertiary Hospital</h5>
-        </div>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <p class="text-justify">
-                A Tertiary Public Hospital in American Samoa represents the highest level of care, typically consisting of major city General Hospitals, Teaching Hospitals, and Specialist Hospitals located in key urban centers including Yangon, Mandalay, and Nay Pyi Taw. These hospitals are national referral centers, managing the most complex and specialized medical conditions while also being hubs for medical education and research.
-                However, a General Hospital is a hospital type rather than a fixed level of care, and is categorized as being either Secondary or Tertiary depending on its bed capacity, clinical capability, specialist, and subspecialist availability, and referral role.
-                Tertiary General Hospitals are typically large facilities (above ≈500 beds) with full subspecialty coverage, advanced diagnostics (e.g., MRI, CT, specialized laboratories), and the ability to perform complex procedures including cardiac or neurosurgery. Tertiary General Hospitals are national referral centers and are mostly located in major cities, including Yangon, Mandalay, and Nay Pyi Taw.
-                In contrast, Secondary General Hospitals are usually smaller (≈50 – 500 beds), provide core specialties with limited subspecialty, and manage moderate-complexity cases while referring advanced cases upward. Secondary General Hospitals typically are regional referral centers and are commonly located at the state/regional or district level.
-                Consistent with Ministry of Health and Sports (MOHS) guidance, classification is determined by service capability and referral function, not by the hospital name itself. A General Hospital is classified as Tertiary when it operates as a high-capability national referral center, and Secondary when it is operating as a regional-level facility with more limited scope of care.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                General Hospitals (Tertiary - Major City)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Major City General Hospital is a large, multi-specialty tertiary hospital located in major urban centers including Yangon, Mandalay, and Nay Pyi Taw. It provides comprehensive clinical services across all major disciplines and functions as a national referral center, managing a wide spectrum of complex medical and surgical cases.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>National referral centers for complex and critical cases</li>
-                    <li>Provide advanced and subspecialty medical care</li>
-                    <li>Function as teaching and training institutions for doctors and specialists</li>
-                    <li>Lead clinical research and advanced medical innovation</li>
-                    <li>Support lower-level hospitals through referral and technical guidance</li>
-                </ul>
-            </p>
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately above 500 beds</strong></li>
-                    <li>
-                        <strong>Core and Subspecialties</strong>
-                        <ul>
-                            <li>Internal Medicine (cardiology, neurology, nephrology, oncology, etc.)</li>
-                            <li>General Surgery</li>
-                            <li>Cardiothoracic Surgery</li>
-                            <li>Neurosurgery</li>
-                            <li>Orthopedic Surgery</li>
-                            <li>Obstetrics & Gynecology</li>
-                            <li>Pediatrics (including subspecialties)</li>
-                            <li>Anesthesiology</li>
-                            <li>Emergency Medicine</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Organ transplantation (in selected centers)</li>
-                            <li>Cardiac surgery and catheterization laboratories</li>
-                            <li>Radiation oncology and advanced cancer care</li>
-                            <li>Dialysis and renal replacement therapy</li>
-                            <li>Advanced intensive care (ICU, NICU, CCU)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Complex and high-risk surgeries</li>
-                            <li>Multidisciplinary surgical procedures</li>
-                            <li>Advanced minimally invasive surgery</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging (X-ray, Ultrasound, CT Scan, MRI, PET-CT)</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Teaching Hospital (Tertiary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Teaching Hospital is a tertiary-level hospital formally affiliated with medical universities, and is a center for medical education, specialist training, and clinical research. Teaching hospitals provide highly specialized care while simultaneously training undergraduate and postgraduate medical personnel.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Train medical students, interns, and specialist residents</li>
-                    <li>Provide advanced and subspecialty clinical services</li>
-                    <li>Conduct clinical research and academic activities</li>
-                    <li>National referral centers for complex cases</li>
-                </ul>
-            </p>
-
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately above 500 beds</strong></li>
-                    <li>
-                        <strong>Core and Subspecialties</strong>
-                        <ul>
-                            <li>Full range of medical and surgical specialties<li>
-                            <li>Extensive subspecialty departments across disciplines</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Highly specialized procedures (e.g., complex oncology, neurosurgery)<li>
-                            <li>Multidisciplinary care teams</li>
-                            <li>Advanced ICU and critical care units</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                            <li>Complex and high-risk surgeries</li>
-                            <li>Teaching-integrated surgical practice</li>
-                            <li>Multidisciplinary case management</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: X-ray, Ultrasound, CT Scan, MRI, Advanced imaging modalities</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Teaching Hospitals are inherently tertiary due to their academic function, full specialist coverage, and role in national referral and training systems.
-            </p>
-            <h5 class="fw-bold" style="color:#000; font-weight:700;">
-                Specialist Hospital (Tertiary)
-            </h5>
-            <h6 class="fw-bold">
-                <b>Overview</b>
-            </h6>
-            <p class="text-justify">
-                A Specialist Hospital is a tertiary-level facility focused on a specific field of medicine, including cardiology, orthopedics, oncology, or infectious diseases. Specialist hospitals provide highly specialized and advanced care within their domain and act as national referral centers for specific conditions.
-            </p>
-            <h6 class="fw-bold">
-                <b>Role</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li>Provide specialized care within a defined medical field</li>
-                    <li>National referral centers for specific diseases or procedures</li>
-                    <li>Support other hospitals with specialist expertise</li>
-                    <li>Contribute to advanced clinical practice and training</li>
-                </ul>
-            </p>
-
-            <h6 class="fw-bold">
-                <b>Clinical Services</b>
-            </h6>
-            <p class="text-justify">
-                <ul>
-                    <li><strong>Bed Capacity, approximately 200 – 800+ beds (varies by specialty)</strong></li>
-                    <li>
-                        <strong>Specialized Clinical Focus</strong>
-                        <ul>
-                            <li>Cardiology / Cardiothoracic services<li>
-                            <li>Oncology services</li>
-                            <li>Orthopedic and trauma services</li>
-                            <li>Infectious disease management</li>
-                            <li>Other specialty-specific services</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Advanced Tertiary Services </strong>
-                        <ul>
-                            <li>Highly specialized procedures within the field</li>
-                            <li>Advanced disease-specific treatment protocols</li>
-                            <li>Specialized ICU units (e.g., cardiac ICU)</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Surgical & Procedural Capacity </strong>
-                        <ul>
-                           <li>Complex specialty-specific surgeries</li>
-                           <li>High-risk and advanced procedures</li>
-                        </ul>
-                    </li>
-                    <li class="mt-2">
-                        <strong>Diagnostic & Support Infrastructure</strong>
-                        <ul>
-                            <li>Imaging: CT Scan, MRI, Specialty-specific imaging systems</li>
-                            <li>Type A Laboratory <a href="{{ route('exurl') }}" target="_blank">(click here to see laboratory classifications)</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </p>
-            <p class="text-justify">
-                <b><u>Note:</u></b> Specialist Hospitals are classified as Tertiary due to their highly specialized capability, advanced procedures, and national referral role, even though their scope is narrower than general hospitals.
-            </p>
-      </div>
-    </div>
-  </div>
-</div>
+@include('partials.medical-classification-modals')
 
 @include('partials.medical-classification-tabs')
 
@@ -1780,7 +984,10 @@ async function fetchHospitalData(filters = {}) {
         }
     });
 
-    const res = await fetch(`/api/hospital?${params.toString()}`);
+    const res = await fetch(`{{ route('hospital.map-data', [], false) }}?${params.toString()}`, {
+        headers: { Accept: 'application/json' }
+    });
+    if (!res.ok) throw new Error(`Hospital map data request failed (${res.status})`);
 
     return await res.json();
 }
@@ -1799,12 +1006,17 @@ function addHospitalMarkers(data) {
 
         const marker = new google.maps.Marker({
             position,
-            map,
-            icon: {
-                url: h.icon || 'https://unpkg.com/leaflet/dist/images/marker-icon.png',
-                scaledSize: new google.maps.Size(24, 24)
-            }
+            map
         });
+
+        if (h.icon) {
+            const icon = new Image();
+            icon.onload = () => marker.setIcon({
+                url: h.icon,
+                scaledSize: new google.maps.Size(24, 24)
+            });
+            icon.src = h.icon;
+        }
 
         const itemName  = h.name || 'N/A';
         const detailUrl = `/hospitals/${h.id}`;
@@ -1885,6 +1097,8 @@ function addHospitalMarkers(data) {
         map.fitBounds(bounds, 50);
 }
 
+@include('partials.hospital-level-filter-script')
+
 // === Apply Filter ===
 async function applyHospitalFilters() {
     // Ambil provinsi terpilih
@@ -1892,7 +1106,7 @@ async function applyHospitalFilters() {
     // Ambil kategori hospital
     const aClasses = [...document.querySelectorAll('input[name="hospitalLevel"]:checked')].map(e => e.value);
     // Ambil nama hospital dari select2
-    const hospitalSelect = $('#hospital_name_map').val() || '';
+    const hospitalSelect = $(combinedPanelDiv.querySelector('#hospital_name_map')).val() || '';
     const hospitalName = Array.isArray(hospitalSelect) ? hospitalSelect[0] : hospitalSelect;
     // Ambil radius
     const radius = parseInt(document.getElementById('radiusRangeMap')?.value || 0);
@@ -1907,32 +1121,16 @@ async function applyHospitalFilters() {
         filters.center_lng = lastClickedLocation.lng;
     }
 
-    const result = await fetchHospitalData(filters);
+    let result;
+    try {
+        result = await fetchHospitalData(filters);
+    } catch (error) {
+        console.error(error);
+        combinedPanelDiv.querySelector('#totalCountDisplay').textContent = 'Unable to load hospital map data.';
+        return;
+    }
 
-    const hospitalsData = result.hospitals;
-    const categoryCounts = result.levelCounts;
-
-    const filteredHospitals = hospitalsData.filter(a => {
-
-        // =========================
-        // FILTER CATEGORY
-        // =========================
-        let categoryMatch = true;
-
-        if (aClasses.length > 0) {
-            if (!a.facility_level) return false;
-
-            const dbCategories = a.facility_level
-                .split(',')
-                .map(c => c.trim().toLowerCase());
-
-            categoryMatch = aClasses.some(sel =>
-                dbCategories.includes(sel.toLowerCase())
-            );
-        }
-
-        if (!categoryMatch) return false;
-
+    const hospitalsInArea = result.hospitals.filter(a => {
         // =========================
         // FILTER POLYGON
         // =========================
@@ -1954,28 +1152,10 @@ async function applyHospitalFilters() {
         return true;
     });
 
+    updateHospitalLevelCounts(combinedPanelDiv, hospitalsInArea);
+    const filteredHospitals = hospitalsInArea.filter(hospital => matchesHospitalLevel(hospital, aClasses));
     addHospitalMarkers(filteredHospitals);
-    document.getElementById('totalCountDisplay').innerHTML = `<strong>Hospitals:</strong> ${filteredHospitals.length}`;
-
-    const localCounts = {};
-
-    filteredHospitals.forEach(a => {
-        if (!a.facility_level) return;
-
-        a.facility_level.split(',').forEach(cat => {
-            cat = cat.trim();
-
-            localCounts[cat] = (localCounts[cat] || 0) + 1;
-        });
-    });
-
-    Object.keys(categoryCounts).forEach(cat => {
-    const badge = document.getElementById(`count-${cat.replace(/\s+/g, '-')}`);
-
-    if (badge) {
-        badge.textContent = categoryCounts[cat];
-    }
-});
+    combinedPanelDiv.querySelector('#totalCountDisplay').innerHTML = `<strong>Hospitals:</strong> ${filteredHospitals.length}`;
 }
 
 // === Filter Panel (Custom Google Maps Control) ===
@@ -2038,12 +1218,7 @@ combinedPanelDiv.innerHTML = `
                 @endforeach
             </select>
             <label>Facility Level:</label>
-            ${['Tertiary','Secondary','Primary','Large Private','Medium Private','Small Private'].map(c => `
-            <label style="display:block;font-size:13px;margin-bottom:5px;">
-                <input type="checkbox" name="hospitalLevel" value="${c}">
-                ${c} (<span id="count-${c.replace(/\s+/g, '-')}">0</span>)
-            </label>
-            `).join('')}
+            @include('partials.hospital-level-options')
             <hr>
             <div class="filter-box" id="provinceSelect">
                 <label class="filter-label">Province</label>
@@ -2385,16 +1560,7 @@ setTimeout(() => {
     initLocationSearch();
 }, 350);
 
-// Retry sampai badge kategori (di dalam combinedPanelDiv) benar-benar ada di DOM,
-// supaya jumlah per kategori tidak "nyangkut" di 0 saat load pertama.
-function initialApplyFilters() {
-    if (!document.getElementById('count-Tertiary')) {
-        setTimeout(initialApplyFilters, 200);
-        return;
-    }
-    applyHospitalFilters();
-}
-initialApplyFilters();
+applyHospitalFilters();
 </script>
 
 @endpush

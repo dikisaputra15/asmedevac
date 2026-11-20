@@ -139,6 +139,7 @@ Route::middleware(['web', 'jwt.login'])->group(function () {
 Route::middleware(['web', 'jwt.login'])->group(function () {
     Route::get('/airports', [AirportsController::class, 'index']);
     Route::get('/hospital', [HospitalController::class, 'index']);
+    Route::get('/api/hospital/map-data', [HospitalController::class, 'mapData'])->name('hospital.map-data');
     Route::get('/embassiees', [EmbassieesController::class, 'index']);
 });
 

@@ -177,7 +177,7 @@
     <!-- Kolom kiri dengan 3 card -->
     <div class="col-md-3">
         <div class="card mb-3">
-            <div class="card-header fw-bold"><img src="https://cdn-icons-png.freepik.com/512/197/197609.png" style="width: 25px; height: 25px;"> Domestic</div>
+            <div class="card-header fw-bold"><img src="{{ asset('AdminLTE/plugins/flag-icon-css/flags/4x3/as.svg') }}" alt="American Samoa" width="25"> Domestic</div>
             <div class="card-body overflow-auto" style="max-height: 300px;">
                 <?php echo $airport->domestic_flights; ?>
             </div>
@@ -237,18 +237,23 @@
 
                             <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level2Modal">
                                 <img src="https://pg.concordreview.com/wp-content/uploads/2024/10/civil-military-airport.png" style="width:18px; height:18px;">
-                                <small>Combined (Civil - Military)</small>
+                                <small>Civil-Military</small>
                             </button>
 
                             <button class="btn p-1" data-bs-toggle="modal" data-bs-target="#level1Modal">
                                 <img src="https://pg.concordreview.com/wp-content/uploads/2025/01/private-airport.png" style="width:18px; height:18px;">
                                 <small>Private</small>
                             </button>
+
+                            <span class="btn p-1">
+                                <img src="https://pg.concordreview.com/wp-content/uploads/2025/11/helipad-removebg.png" style="width:18px; height:18px;">
+                                <small>Helipad</small>
+                            </span>
                     </div>
                 </div>
             </div>
             <div class="card-body overflow-auto">
-                <iframe src="https://globe.adsbexchange.com/?lat=-14.2710&lon=-170.1322&zoom=7" width="100%" height="600" frameborder="0"></iframe>
+                <iframe src="https://globe.adsbexchange.com/?lat=-14.33166&amp;lon=-170.7115031&amp;zoom=7" width="100%" height="600" frameborder="0"></iframe>
             </div>
         </div>
     </div>

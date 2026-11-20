@@ -183,6 +183,34 @@ class HospitalController extends Controller
 
     public function filter(Request $request)
     {
+        return $this->filterHospitals($request, ['hospitals.*']);
+    }
+
+    public function mapData(Request $request)
+    {
+        $filters = $request->validate([
+            'name' => ['sometimes', 'string', 'max:255'],
+            'provinces' => ['sometimes', 'array'],
+            'provinces.*' => ['integer'],
+            'radius' => ['sometimes', 'numeric', 'min:0'],
+            'center_lat' => ['sometimes', 'numeric', 'between:-90,90'],
+            'center_lng' => ['sometimes', 'numeric', 'between:-180,180'],
+        ]);
+
+        return $this->filterHospitals($request->duplicate($filters), [
+            'hospitals.id',
+            'hospitals.name',
+            'hospitals.icon',
+            'hospitals.latitude',
+            'hospitals.longitude',
+            'hospitals.facility_level',
+            'hospitals.facility_category',
+            'hospitals.address',
+        ]);
+    }
+
+    private function filterHospitals(Request $request, array $columns)
+    {
         $query = Hospital::query();
 
         //  JOIN YANG BENAR & AMAN
@@ -190,12 +218,12 @@ class HospitalController extends Controller
         $query->leftJoin('cities', 'cities.id', '=', 'hospitals.city_id');
         $query->leftJoin('provincesregions', 'provincesregions.id', '=', 'hospitals.province_id');
 
-        $query->select(
-            'hospitals.*',
+        $query->select([
+            ...$columns,
             'districts.district',
             'cities.city',
             'provincesregions.provinces_region'
-        );
+        ]);
 
         $query->where('hospital_status', true);
 
@@ -276,12 +304,8 @@ class HospitalController extends Controller
         $hospitals = $query->get();
 
         $levelCounts = [
-            'Tertiary' => 0,
-            'Secondary' => 0,
-            'Primary' => 0,
-            'Large Private' => 0,
-            'Medium Private' => 0,
-            'Small Private' => 0,
+            'Hospitals' => 0,
+            'Clinic / Health Centre' => 0,
         ];
 
         foreach ($hospitals as $hospital) {
